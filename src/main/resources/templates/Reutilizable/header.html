@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Header</title>
+    <link rel="stylesheet" href="/reutilizableCSS/header.css">
 </head>
 <body>
-<h1>Ventana que el profe nos dijo creemos del header (Elemento que reutilizaremos) para ahorrar codigo</h1>
+<header th:fragment="header">
+    <section class="headerWrapper">
+        <div class="decoracionWrapper">
+            <img src="/img/decoracionHeader.png">
+        </div>
+        <div class="logoWrapper">
+            <img src="/img/tseLogo.jpg">
+        </div>
+    </section>
+</header>
+
 </body>
 </html>

@@ -1,8 +1,29 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
+/*----------CSS DEL HEADER----------*/
+.headerWrapper{
+    display: flex;
+    margin-bottom: 2em;
+}
+.headerWrapper > .decoracionWrapper > img{
+    width: 25vh;
+}
+.headerWrapper > .logoWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15em;
+}
+.headerWrapper > .logoWrapper > img{
+    width: 50vh;
+    height: 27vh;
+}
+
+/*----------CSS DEL INDEX----------*/
 .generalWrapper{
     background-color: blue;
 }
@@ -12,3 +33,4 @@ h1{
     color: yellow;
     font-size: 35px;
 }
+

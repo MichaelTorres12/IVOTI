@@ -9,7 +9,17 @@
 <body>
     <div th:include="Reutilizable/header.html :: header"></div>
     <section class="generalWrapper">
-        <h1>VENTANA QUE TIENE UN MENU PARA ACCEDER A CADA UNO DE LOS SISTEMAS O ROLES</h1>
+        <div class="bienvenidaTexto">
+            <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
+        </div>
+        <div class="duiIngreso">
+            <h2>Ingrese el DUI del votante para verificar su información y estatus del votante</h2>
+            <input type="text" name="pedirDui" placeholder="Ejemplo: 12345678-9">
+        </div>
+        <div class="btnVerificar">
+            <button type="button">Verificar</button>
+        </div>
     </section>
+    <div th:include="Reutilizable/footer.html :: footer"></div>
 </body>
 </html>

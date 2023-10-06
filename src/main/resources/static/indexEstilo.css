@@ -6,7 +6,7 @@
 /*----------CSS DEL HEADER----------*/
 .headerWrapper{
     display: flex;
-    margin-bottom: 2em;
+    margin-bottom: -2em;
 }
 .headerWrapper > .decoracionWrapper > img{
     width: 25vh;
@@ -19,18 +19,91 @@
     margin-right: 15em;
 }
 .headerWrapper > .logoWrapper > img{
-    width: 50vh;
-    height: 27vh;
+    width: 60vh;
+    height: 28vh;
+    margin-top: -2em;
 }
 
 /*----------CSS DEL INDEX----------*/
 .generalWrapper{
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 h1{
     font-family: "Tahoma";
-    color: yellow;
-    font-size: 35px;
+    color: black;
+    font-size: 30px;
+}
+h2{
+    font-family: "Tahoma";
+    color: black;
+    font-size: 25px;
 }
 
+.generalWrapper > .bienvenidaTexto{
+    margin-bottom: 3em;
+}
+
+.generalWrapper > .duiIngreso > input{
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 650px;
+    height: 30px;
+    margin-top: 2.3em;
+    background-color: #E8F4FF;
+    padding: 0.5em;
+    font-size: 32px;
+    text-align: center;
+}
+
+.generalWrapper > .btnVerificar{
+    margin-top: 3.3em;
+}
+
+.generalWrapper > .btnVerificar > button{
+    background-color: #1C9AE0;
+    border-radius: 10px;
+    border: 4px solid #0F4563;
+    height: 55px;
+    width: 160px;
+    color: white;
+    font-size: 20px;
+}
+.generalWrapper > .btnVerificar > button:hover{
+    cursor: pointer;
+    background-color: #1b81be;
+    font-size: 22px;
+    box-shadow: 0 2px 5px;
+}
+
+/*----------CSS DEL FOOTER----------*/
+.footerWrapper {
+    position: fixed;       /* Esto hace que el contenedor quede fijo */
+    right: 0;              /* Alinea el contenedor a la derecha */
+    bottom: 0;             /* Alinea el contenedor abajo */
+    display: flex;         /* Hace que los hijos se alineen en el eje x */
+    align-items: center;   /* Centra los hijos verticalmente en caso de que tengan diferentes alturas */
+    z-index: 1000;         /* Asegura que el contenedor esté encima de otros elementos */
+}
+
+.footerWrapper img {
+    height: 30vh;   /* Puedes ajustar esto según el tamaño que desees */
+    width: auto;    /* Esto mantendrá la relación de aspecto de la imagen */
+}
+
+.footerWrapper > .logoFooterWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15em;
+}
+.footerWrapper > .logoFooterWrapper > img{
+    width: 60vh;
+    height: 28vh;
+    margin-top: -2em;
+}

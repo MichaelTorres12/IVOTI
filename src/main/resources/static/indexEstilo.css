@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.generalWrapper{
+    background-color: blue;
+}
+
+h1{
+    font-family: "Tahoma";
+    color: yellow;
+    font-size: 35px;
+}

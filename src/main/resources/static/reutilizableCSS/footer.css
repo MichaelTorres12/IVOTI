@@ -1,0 +1,22 @@
+.footerWrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+.footerWrapper > .logoIvotiWrapper > img{
+    width: 15vh;
+}
+.footerWrapper > .logoIvotiWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 19em;
+}
+.footerWrapper > .decoracionFooterWrapper{
+}
+.footerWrapper > .decoracionFooterWrapper > img{
+    display: flex;
+    width: 30vh;
+    height: 30vh;
+}

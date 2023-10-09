@@ -4,8 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Detalles Votante</title>
+    <link rel="stylesheet" href="/verificacionCSS/detalleVotante.css">
+    <link rel="stylesheet" href="/reutilizableCSS/header.css">
+    <link rel="stylesheet" href="/reutilizableCSS/footer.css">
 </head>
 <body>
-    <h1>VENTANA QUE MUESTRA LOS DETALLES DEL VOTANTE Y SI ESTE ES APTO PARA VOTAR O NO</h1>
+<div th:include="Reutilizable/header.html" :: header></div>
+<section class="generalWrapper">
+    <div class="contentWrapper">
+        <div class="bienvenidaTexto">
+            <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
+        </div>
+    </div>
+</section>
+<div th:include="Reutilizable/footer.html :: footer"></div>
 </body>
 </html>

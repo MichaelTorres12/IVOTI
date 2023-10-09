@@ -5,21 +5,42 @@
     <meta charset="UTF-8">
     <title>Menu</title>
     <link rel="stylesheet" href="/indexEstilo.css">
+    <link rel="stylesheet" href="/reutilizableCSS/header.css">
+    <link rel="stylesheet" href="/reutilizableCSS/footer.css">
 </head>
 <body>
     <div th:include="Reutilizable/header.html :: header"></div>
-    <section class="generalWrapper">
-        <div class="bienvenidaTexto">
-            <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
+    <div class="bodyWrap">
+    <section class="generalWrapperMenu">
+        <div class="textMenu">
+            <h1>Menú de roles/sub-sistema de IVOTI</h1>
+            <p>Como nuestro sistema está pensado en 3 diferentes roles, hemos decidido hacer un menú en donde se encuentren y explicar cual es la finalidad de cada uno.</p>
         </div>
-        <div class="duiIngreso">
-            <h2>Ingrese el DUI del votante para verificar su información y estatus del votante</h2>
-            <input type="text" name="pedirDui" placeholder="Ejemplo: 12345678-9">
-        </div>
-        <div class="btnVerificar">
-            <button type="button">Verificar</button>
+        <div class="opcionesMenu">
+            <a th:href="@{/urna}">
+                <div class="opciones">
+                    <img src="/img/urna.jpg" alt="imagen de cuidador de urna">
+                    <h2>Sistema de cuidador de urna</h2>
+                </div>
+            </a>
+            <a th:href="@{/votaciones}">
+                <div class="opciones">
+                    <img src="/img/urna02.jpeg" alt="Urna electoral">
+                    <h2>Sistema de votos en urna</h2>
+                </div>
+            </a>
+            <a th:href="@{/estadisticas}">
+                <div class="opciones">
+                    <img src="/img/stats02.webp" alt="estadisticas">
+                    <h2>Sistema de estadisticas electorales</h2>
+                </div>
+            </a>
         </div>
     </section>
-    <div th:include="Reutilizable/footer.html :: footer"></div>
+    </div>
+    <div class="footerMenu">
+        <div th:include="Reutilizable/footer.html :: footer"></div>
+    </div>
+
 </body>
 </html>

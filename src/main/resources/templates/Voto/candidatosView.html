@@ -7,5 +7,14 @@
 </head>
 <body>
     <h1>VENTANA EN LA QUE SE MOSTRARAN LOS CANDIDATOS Y LAS VENTANAS MODAL DEL VERIFICAION</h1>
+
+    <div th:each="candidato : ${candidatos}">
+        <p th:text="${candidato.id_candidato}"></p>
+        <p th:text="${candidato.getNombresCandidato()}"></p>
+        <p th:text="${candidato.getApellidosCandidato()}"></p>
+        <p th:text="${candidato.getFotoCandidato()}"></p>
+        <p th:text="${candidato.getIdPartido()}"></p>
+    </div>
+
 </body>
 </html>

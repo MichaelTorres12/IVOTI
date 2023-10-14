@@ -1,12 +1,39 @@
 package com.project.ivoti.Controllers;
+import com.project.ivoti.Models.Candidato;
+import com.project.ivoti.Models.Partido;
+import com.project.ivoti.Models.Votante;
+import com.project.ivoti.interfaceService.IcandidatoService;
+import com.project.ivoti.interfaceService.IpartidoService;
+import com.project.ivoti.interfaceService.IvotanteService;
+import com.project.ivoti.interfaceService.IvotoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class HomeController {
+
+    @Qualifier("candidatoService")
+    @Autowired(required = true)
+    private IcandidatoService candidato;
+    @Autowired(required = true)
+    private IpartidoService partido;
+    @Autowired(required = true)
+    private IvotanteService votante;
+    @Autowired(required = true)
+    private IvotoService voto;
+
     @GetMapping("/") //Ruta del menu principal, es decir el index
     public String index() {
+        List<Votante> votantes = votante.listar();
+        for (Votante vt : votantes) {
+            System.out.println(vt);
+        }
         return "index";
     }
 
@@ -25,7 +52,11 @@ public class HomeController {
     public String votaciones() { return "Voto/duiIngresoView"; }
 
     @GetMapping("/candidatos") //Ruta donde se muestran los candidatos.
-    public String candidatos() { return "Voto/candidatosView"; }
+    public String candidatos(Model model) {
+        List<Candidato> canditatos = candidato.listar();
+        model.addAttribute("candidatos", canditatos);
+        return "Voto/candidatosView";
+    }
 
     @GetMapping("/votoFinalizado") //Ruta donde se indica que terminó el proceso.
     public String votosFinalizado() { return "Voto/finalizadoView";}

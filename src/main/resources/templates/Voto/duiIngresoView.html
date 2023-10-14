@@ -4,8 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Dui Votacion</title>
+    <link rel="stylesheet" href="/votoCSS/duiIngreso.css">
+    <link rel="stylesheet" href="/reutilizableCSS/header.css">
+    <link rel="stylesheet" href="/reutilizableCSS/footer.css">
 </head>
 <body>
-    <h1>VENTANA EN LA QUE SE INGRESA EL DUI PREVIAMENTE VERIFICADO</h1>
+<div th:include="Reutilizable/header.html" :: header></div>
+
+<section class="generalWrapper">
+    <div class="contentWrapper">
+        <div class="bienvenidaTexto">
+            <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
+        </div>
+        <div class="duiIngreso">
+            <h2>Ingresa tu DUI en el siguiente campo para poder votar:</h2>
+            <input type="text" name="pedirDui" placeholder="Ejemplo: 12345678-9">
+        </div>
+        <div class="btnVerificar">
+            <a th:href="@{/candidatos}">
+                <button type="button">Verificar</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div th:include="Reutilizable/footer.html :: footer"></div>
 </body>
 </html>

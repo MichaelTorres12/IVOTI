@@ -4,9 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Candidatos Electorales</title>
+    <link rel="stylesheet" href="/votoCSS/candidatos.css">
+    <link rel="stylesheet" href="/reutilizableCSS/header.css">
+    <link rel="stylesheet" href="/reutilizableCSS/footer.css">
 </head>
 <body>
-    <h1>VENTANA EN LA QUE SE MOSTRARAN LOS CANDIDATOS Y LAS VENTANAS MODAL DEL VERIFICAION</h1>
+<div th:include="Reutilizable/header.html" :: header></div>
+
+<section class="generalWrapper">
+    <div class="contentWrapper">
+        <div class="bienvenidaTexto">
+            <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
+        </div>
+        <div class="indicacionesTexto">
+            <h2>Vota por uno de los siguientes candidatos presidenciales:</h2>
+        </div>
+        <div class="candidatos">
+            <h1>AQUI DEBEMOS DE HACERLO COMO LO QUE HEMOS HECHO CON TRIP EN JAVA <br> Es decir, usar uno solo que se multiplique por la cantidad de candidatos en la DB, no hacer un cuadrito por cada uno. </h1>
+        </div>
+    </div>
+    <a th:href="@{/votoFinalizado}">
+        <button>FELICIDADES BTN</button>
+    </a>
+</section>
 
     <div th:each="candidato : ${candidatos}">
         <p th:text="${candidato.id_candidato}"></p>
@@ -16,5 +36,6 @@
         <p th:text="${candidato.getIdPartido()}"></p>
     </div>
 
+<div th:include="Reutilizable/footer.html :: footer"></div>
 </body>
 </html>

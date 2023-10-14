@@ -10,12 +10,43 @@
 </head>
 <body>
 <div th:include="Reutilizable/header.html" :: header></div>
+
 <section class="generalWrapper">
-    <div class="contentWrapper">
+    <section class="infoWrapper">
         <div class="bienvenidaTexto">
             <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
         </div>
-    </div>
+        <div class="votanteInfo">
+            <div class="votanteEstado">
+                <h2>El DUI (llamar DUI ingresado) (no/ya) ha votado y (es apto/no es apto) para hacerlo (✅/❌)</h2>
+            </div>
+            <div class="duiInfo">
+                <div class="leftColumn">
+                    <p>Apellidos:</p>
+                    <p>Nombres:</p>
+                    <p>Sexo:</p>
+                    <p>Departamento:</p>
+                    <p>Municipio:</p>
+                    <p>Distrito:</p>
+                    <p>Centro de votación:</p>
+                </div>
+                <div class="rightColumn">
+                    <p>(Llamar apellidos DUI)</p>
+                    <p>(Llamar nombres DUI):</p>
+                    <p>(Llamar sexo DUI)</p>
+                    <p>(Llamar Departamento DUI)</p>
+                    <p>(Llamar Municipio DUI)</p>
+                    <p>(Llamar Distrito DUI)</p>
+                    <p>(Llamar centro de votación DUI)</p>
+                </div>
+            </div>
+            <a th:href="@{/urna}">
+                <button>REGRESAR</button>
+            </a>
+        </div>
+    </section>
+</section>
+
 </section>
 <div th:include="Reutilizable/footer.html :: footer"></div>
 </body>

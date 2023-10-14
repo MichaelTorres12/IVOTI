@@ -4,8 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Finalizado</title>
+    <link rel="stylesheet" href="/votoCSS/finalizado.css">
+    <link rel="stylesheet" href="/reutilizableCSS/header.css">
+    <link rel="stylesheet" href="/reutilizableCSS/footer.css">
 </head>
 <body>
-    <h1>VENTANA QUE MUESTRA AL USUARIO QUE HA FINALIZADO SU PROCESO DE VOTACIÓN</h1>
+<div th:include="Reutilizable/header.html" :: header></div>
+
+<section class="generalWrapper">
+    <div class="contentWrapper">
+        <div class="bienvenidaTexto">
+            <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
+        </div>
+        <div class="felicidadesTexto">
+            <h2>¡FELICIDADES! Has completado el proceso de votaciones<br>presidenciales con éxito, te lo agradecemos.🥳🥳🥳 </h2>
+        </div>
+        <div class="imagen">
+            <img src="/img/felicidades.png" alt="imagen de felicidades" width="600" height="500">
+        </div>
+
+        <a th:href="@{/}">
+            <button>REGRESAR</button>
+        </a>
+</section>
+
+<div th:include="Reutilizable/footer.html :: footer"></div>
 </body>
 </html>

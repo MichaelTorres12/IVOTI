@@ -10,7 +10,6 @@
 </head>
 <body>
 <div th:include="Reutilizable/header.html" :: header></div>
-
 <section class="generalWrapper">
     <div class="contentWrapper">
         <div class="bienvenidaTexto">
@@ -20,21 +19,24 @@
             <h2>Vota por uno de los siguientes candidatos presidenciales:</h2>
         </div>
         <div class="candidatos">
-            <h1>AQUI DEBEMOS DE HACERLO COMO LO QUE HEMOS HECHO CON TRIP EN JAVA <br> Es decir, usar uno solo que se multiplique por la cantidad de candidatos en la DB, no hacer un cuadrito por cada uno. </h1>
+            <div class="infoCandidatoCuadro">
+                <div class="infoCandidatoFoto">
+                    <img src="/img/bukele.jpg" alt="imagen de bukele" width="200" height="180">
+                </div>
+                <div class="infoCandidatoTexto">
+                    <div th:each="candidato : ${candidatos}">
+                        <p th:text="${candidato.getNombresCandidato()}"></p>
+                        <p th:text="${candidato.getApellidosCandidato()}"></p>
+                        <p th:text="${candidato.getIdPartido()}"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <a th:href="@{/votoFinalizado}">
+    <a th:href="@{/votoFinalizado}" class="botonFelicidades">
         <button>FELICIDADES BTN</button>
     </a>
 </section>
-
-    <div th:each="candidato : ${candidatos}">
-        <p th:text="${candidato.id_candidato}"></p>
-        <p th:text="${candidato.getNombresCandidato()}"></p>
-        <p th:text="${candidato.getApellidosCandidato()}"></p>
-        <p th:text="${candidato.getFotoCandidato()}"></p>
-        <p th:text="${candidato.getIdPartido()}"></p>
-    </div>
 
 <div th:include="Reutilizable/footer.html :: footer"></div>
 </body>

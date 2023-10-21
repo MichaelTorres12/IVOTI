@@ -20,9 +20,12 @@ h2{
     font-weight: 400;
     letter-spacing: 0.5px;
 }
+p{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
 .generalWrapper > .contentWrapper{
     width: 1200px;
-    background-color: burlywood;
 }
 .generalWrapper > .contentWrapper > .bienvenidaTexto{
     margin-bottom: 4em;
@@ -31,5 +34,39 @@ h2{
     margin-bottom: 4em;
 }
 .generalWrapper > .contentWrapper > .candidatos{
-    background-color: #d1b4ec;
+    margin-bottom: 2em;
+}
+
+.generalWrapper > .contentWrapper > .candidatos > .infoCandidatoCuadro{
+    background-color: #eeeeee;
+    width: 220px;
+    height: 350px;
+    border: 4px solid black;
+    border-radius: 30px;
+    padding: 1em;
+}
+.generalWrapper > .contentWrapper > .candidatos > .infoCandidatoCuadro:hover{
+    background-color: rgb(217, 217, 217);
+    cursor: pointer;
+}
+.generalWrapper > .contentWrapper > .candidatos > .infoCandidatoCuadro > .infoCandidatoFoto{
+    margin-bottom: 1.5em;
+}
+.generalWrapper > .contentWrapper > .candidatos > .infoCandidatoCuadro > .infoCandidatoFoto > img{
+    border-radius: 20px;
+    border: 3px solid black;
+}
+
+.generalWrapper > .botonFelicidades > button{
+    background-color: rgb(18, 144, 18);
+    color: white;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.generalWrapper > .botonFelicidades > button:hover{
+    background-color: rgb(13, 118, 13);
+    cursor: pointer;
 }

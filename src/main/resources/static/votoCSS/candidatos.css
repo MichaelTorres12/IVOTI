@@ -22,7 +22,7 @@ h2{
 }
 p{
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 .generalWrapper > .contentWrapper{
     width: 1200px;
@@ -43,7 +43,7 @@ p{
 .generalWrapper > .contentWrapper > .candidatos > .infoCandidatoCuadro{
     background-color: #eeeeee;
     width: 220px;
-    height: 350px;
+    height: 380px;
     border: 4px solid black;
     border-radius: 30px;
     padding: 1em;

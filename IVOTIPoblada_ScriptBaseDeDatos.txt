@@ -1,5 +1,3 @@
-#VAYAN EJECUTANDO BLOQUE POR BLOQUE PARA EVITAR ERRORES.
-
 CREATE DATABASE ivotidb;
 
 use ivotidb;
@@ -290,6 +288,21 @@ VALUES
 #POBLAR CON UN DATO LOS VOTOS PARA VER QUE FUNCIONE.
 INSERT INTO Votos (dui, id_candidato, hora_voto, id_centro_votacion)
 VALUES (056738950, 2, '10:30:00', 3);
+
+#INGRESAR LAS IMAGENES/FOTOS DE LOS CANDIDATOS
+UPDATE Candidatos SET foto_candidato = 'bukele.jpg' WHERE id_candidato = 1;
+UPDATE Candidatos SET foto_candidato = 'joelSanchez.jpg' WHERE id_candidato = 2;
+UPDATE Candidatos SET foto_candidato = 'luiParada.jpg' WHERE id_candidato = 3;
+UPDATE Candidatos SET foto_candidato = 'manuelFlores.jpg' WHERE id_candidato = 4;
+UPDATE Candidatos SET foto_candidato = 'joseRenderos.jpeg' WHERE id_candidato = 5;
+UPDATE Candidatos SET foto_candidato = 'joseCardoza.png' WHERE id_candidato = 6;
+UPDATE Candidatos SET foto_candidato = 'marinaMaurillo.jpg' WHERE id_candidato = 7;
+UPDATE Candidatos SET foto_candidato = 'tonySaca.jpg' WHERE id_candidato = 8;
+UPDATE Candidatos SET foto_candidato = 'joseSerafin.jpg' WHERE id_candidato = 9;
+UPDATE Candidatos SET foto_candidato = 'reynaldoCarballo.jpg' WHERE id_candidato = 10;
+UPDATE Candidatos SET foto_candidato = 'claudiaOrtiz.jpg' WHERE id_candidato = 11;
+UPDATE Candidatos SET foto_candidato = 'douglasMejia.jpg' WHERE id_candidato = 12;
+UPDATE Candidatos SET foto_candidato = 'fitoSalume.jpg' WHERE id_candidato = 13;
 
 #SELECCIONAR TABLAS
 SELECT * FROM CentroVotacion;

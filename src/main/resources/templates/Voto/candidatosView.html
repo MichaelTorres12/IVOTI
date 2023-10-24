@@ -21,7 +21,7 @@
         <div class="candidatos">
             <div th:each="candidato : ${candidatos}" class="infoCandidatoCuadro">
                 <div class="infoCandidatoFoto">
-                    <img src="/img/bukele.jpg" alt="imagen de bukele" width="200" height="200">
+                    <img th:src="@{/img/{foto}(foto=${candidato.fotoCandidato})}" alt="Foto del candidato" width="200" height="200">
                 </div>
                 <div class="infoCandidatoTexto">
                     <div>

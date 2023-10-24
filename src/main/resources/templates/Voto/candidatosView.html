@@ -19,12 +19,12 @@
             <h2>Vota por uno de los siguientes candidatos presidenciales:</h2>
         </div>
         <div class="candidatos">
-            <div class="infoCandidatoCuadro">
+            <div th:each="candidato : ${candidatos}" class="infoCandidatoCuadro">
                 <div class="infoCandidatoFoto">
-                    <img src="/img/bukele.jpg" alt="imagen de bukele" width="200" height="180">
+                    <img src="/img/bukele.jpg" alt="imagen de bukele" width="200" height="200">
                 </div>
                 <div class="infoCandidatoTexto">
-                    <div th:each="candidato : ${candidatos}">
+                    <div>
                         <p th:text="${candidato.getNombresCandidato()}"></p>
                         <p th:text="${candidato.getApellidosCandidato()}"></p>
                         <p th:text="${candidato.getIdPartido()}"></p>

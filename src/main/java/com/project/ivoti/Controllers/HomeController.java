@@ -30,10 +30,7 @@ public class HomeController {
 
     @GetMapping("/") //Ruta del menu principal, es decir el index
     public String index() {
-        List<Votante> votantes = votante.listar();
-        for (Votante vt : votantes) {
-            System.out.println(vt);
-        }
+
         return "index";
     }
 
@@ -49,8 +46,14 @@ public class HomeController {
 
     //Rutas del sistema de votacion
     @GetMapping("/votaciones") //Ruta donde se inicia el sistema de sufragio.
-    public String votaciones() { return "Voto/duiIngresoView"; }
+    public String votaciones(Model model) {
+        List<Votante> votantes = votante.listar();
+        model.addAttribute("votantes", votantes);
+        return "Voto/duiIngresoView";
+    }
 
+
+    //Agregar para que acepte el Dui como parametro
     @GetMapping("/candidatos") //Ruta donde se muestran los candidatos.
     public String candidatos(Model model) {
         List<Candidato> canditatos = candidato.listar();

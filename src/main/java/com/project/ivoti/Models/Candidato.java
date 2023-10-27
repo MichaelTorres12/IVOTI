@@ -21,15 +21,16 @@ public class Candidato {
     @Column(name = "foto_candidato")
     private String foto_candidato;
 
-    @Column(name = "id_partido")
-    private int id_partido;
+    @OneToOne
+    @JoinColumn(name = "id_partido")
+    private Partido id_partido;
 
     //----------------------------------------------------------------
     //Constructor
 
     public Candidato() {}
 
-    public Candidato(int id_candidato, String nombres_candidato, String apellidos_candidato, String foto_candidato, int id_partido) {
+    public Candidato(int id_candidato, String nombres_candidato, String apellidos_candidato, String foto_candidato, Partido id_partido) {
         this.id_candidato = id_candidato;
         this.nombres_candidato = nombres_candidato;
         this.apellidos_candidato = apellidos_candidato;
@@ -72,11 +73,11 @@ public class Candidato {
         this.foto_candidato = foto_candidato;
     }
 
-    public int getIdPartido() {
+    public Partido getIdPartido() {
         return id_partido;
     }
 
-    public void setIdPartido(int id_partido) {
+    public void setIdPartido(Partido id_partido) {
         this.id_partido = id_partido;
     }
 }

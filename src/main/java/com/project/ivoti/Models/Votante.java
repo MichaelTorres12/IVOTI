@@ -29,8 +29,9 @@ public class Votante {
     @Column(name = "fecha_expedicion_dui_votante")
     private Date fecha_expedicion_dui_votante;
 
-    @Column(name = "id_centro_votacion")
-    private int id_centro_votacion;
+    @OneToOne
+    @JoinColumn(name = "id_centro_votacion")
+    private CentroVotacion id_centro_votacion;
 
     @Column(name = "ha_votado")
     private boolean ha_votado;
@@ -40,7 +41,7 @@ public class Votante {
 
     public Votante() {}
 
-    public Votante(int dui, String nombres_votante, String apellidos_votante, Date fecha_nacimiento_votante, String sexo_votante, Date fecha_expedicion_dui_votante, int id_centro_votacion, boolean ha_votado) {
+    public Votante(int dui, String nombres_votante, String apellidos_votante, Date fecha_nacimiento_votante, String sexo_votante, Date fecha_expedicion_dui_votante, CentroVotacion id_centro_votacion, boolean ha_votado) {
         this.dui = dui;
         this.nombres_votante = nombres_votante;
         this.apellidos_votante = apellidos_votante;
@@ -103,11 +104,11 @@ public class Votante {
         this.fecha_expedicion_dui_votante = fecha_expedicion_dui_votante;
     }
 
-    public int getId_centro_votacion() {
+    public CentroVotacion getId_centro_votacion() {
         return id_centro_votacion;
     }
 
-    public void setId_centro_votacion(int id_centro_votacion) {
+    public void setId_centro_votacion(CentroVotacion id_centro_votacion) {
         this.id_centro_votacion = id_centro_votacion;
     }
 

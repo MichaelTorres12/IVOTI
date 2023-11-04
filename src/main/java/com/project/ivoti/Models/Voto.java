@@ -17,26 +17,33 @@ public class Voto {
     @Column(name = "hora_voto")
     private Time hora_voto;
 
-    @Column(name = "dui")
-    private int dui;
+    @OneToOne
+    @JoinColumn(name = "dui")
+    private Votante dui;
 
-    @Column(name = "id_candidato")
-    private int id_candidato;
+    @OneToOne
+    @JoinColumn(name = "id_candidato")
+    private Candidato id_candidato;
 
-    @Column(name = "id_centro_votacion")
-    private int id_centro_votacion;
+    @OneToOne
+    @JoinColumn(name = "id_centro_votacion")
+    private CentroVotacion id_centro_votacion;
 
     //----------------------------------------------------------------
     //CONSTRUCT
-    private Voto(){}
 
-    public Voto(int id_voto, Time hora_voto, int dui, int id_candidato, int id_centro_votacion) {
+    public Voto(int id_voto, Time hora_voto, Votante dui, Candidato id_candidato, CentroVotacion id_centro_votacion) {
         this.id_voto = id_voto;
         this.hora_voto = hora_voto;
         this.dui = dui;
         this.id_candidato = id_candidato;
         this.id_centro_votacion = id_centro_votacion;
     }
+
+    public Voto() {
+
+    }
+
 
     //----------------------------------------------------------------
 
@@ -57,27 +64,27 @@ public class Voto {
         this.hora_voto = hora_voto;
     }
 
-    public int getDui() {
+    public Votante getDui() {
         return dui;
     }
 
-    public void setDui(int dui) {
+    public void setDui(Votante dui) {
         this.dui = dui;
     }
 
-    public int getId_candidato() {
+    public Candidato getId_candidato() {
         return id_candidato;
     }
 
-    public void setId_candidato(int id_candidato) {
+    public void setId_candidato(Candidato id_candidato) {
         this.id_candidato = id_candidato;
     }
 
-    public int getId_centro_votacion() {
+    public CentroVotacion getId_centro_votacion() {
         return id_centro_votacion;
     }
 
-    public void setId_centro_votacion(int id_centro_votacion) {
+    public void setId_centro_votacion(CentroVotacion id_centro_votacion) {
         this.id_centro_votacion = id_centro_votacion;
     }
 }

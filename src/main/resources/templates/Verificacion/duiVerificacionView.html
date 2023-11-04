@@ -11,23 +11,23 @@
 <body>
 <div th:include="Reutilizable/header.html :: header"></div>
 <div class="all">
-<section class="generalWrapper">
-    <div class="bienvenidaTexto">
-        <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
-    </div>
-    <div class="duiIngreso">
-        <h2>Ingrese el DUI del votante para verificar su información y estatus del votante</h2>
-        <input type="text" name="pedirDui" placeholder="Ejemplo: 12345678-9">
-    </div>
-    <div class="btnVerificar">
-        <a th:href="@{/informacionVotante}">
-            <button type="button">Verificar</button>
-        </a>
-        <a th:href="@{/}">
-            <button type="button">MENÚ</button>
-        </a>
-    </div>
-</section>
+    <section class="generalWrapper">
+        <div class="bienvenidaTexto">
+            <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
+        </div>
+        <form th:action="@{/verificarDUI}" method="post">
+            <div class="duiIngreso">
+                <h2>Ingrese el DUI del votante para verificar su información y estatus del votante</h2>
+                <input type="text" name="dui" placeholder="Ejemplo: 12345678-9">
+            </div>
+            <div class="btnVerificar">
+                <button type="submit">Verificar</button>
+                </a>
+                <a th:href="@{/}">
+                    <button type="button">MENÚ</button>
+                </a>
+            </div>
+    </section>
 </div>
 <div th:include="Reutilizable/footer.html :: footer"></div>
 </body>

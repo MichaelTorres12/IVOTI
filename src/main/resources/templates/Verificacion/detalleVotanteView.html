@@ -35,17 +35,11 @@
                     <p><span th:text="${votante.apellidos_votante}"></span></p>
                     <p><span th:text="${votante.nombres_votante}"></span></p>
                     <p><span th:text="${votante.sexo_votante}"></span></p>
-                    <!--
+
                     <p><span th:text="${votante.getId_centro_votacion().getDepartamento()}"></span></p>
                     <p><span th:text="${votante.getId_centro_votacion().getMunicipio()}"></span></p>
                     <p><span th:text="${votante.getId_centro_votacion().getDistrito()}"></span></p>
                     <p><span th:text="${votante.getId_centro_votacion().getNombre_centro_votacion()}"></span></p>
-                    -->
-
-                    <p th:if="${votante.id_centro_votacion != null}"><span th:text="${votante.id_centro_votacion.departamento}"></span></p>
-                    <p th:if="${votante.id_centro_votacion != null}"><span th:text="${votante.id_centro_votacion.municipio}"></span></p>
-                    <p th:if="${votante.id_centro_votacion != null}"><span th:text="${votante.id_centro_votacion.distrito}"></span></p>
-                    <p th:if="${votante.id_centro_votacion != null}"><span th:text="${votante.id_centro_votacion.nombre_centro_votacion}"></span></p>
 
 
                 </div>

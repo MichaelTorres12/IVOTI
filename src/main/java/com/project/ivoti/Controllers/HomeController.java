@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -69,6 +71,22 @@ public class HomeController {
     @GetMapping("/estadisticas")
     public String estadistica(){
         return "Estadistica/estadisticaView";
+    }
+
+    @PostMapping("/verificarDUI")
+    public String verificarDUI(@ModelAttribute Votante votante01, Model model) {
+        int dui = votante01.getDui();
+        Optional<Votante> votanteEncontrado = votante.buscarById(dui);
+
+        if (votanteEncontrado.isPresent()) {
+            model.addAttribute("votante", votanteEncontrado.get());
+            return "Verificacion/detalleVotanteView";
+        } else {
+            model.addAttribute("mensaje", "El votante no existe.");
+            return "Verificacion/duiVerificacionView";
+        }
+
+
     }
 }
 

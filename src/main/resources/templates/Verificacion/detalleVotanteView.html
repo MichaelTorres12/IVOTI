@@ -19,7 +19,8 @@
         </div>
         <div class="votanteInfo">
             <div class="votanteEstado">
-                <h2>El DUI (llamar DUI ingresado) (no/ya) ha votado y (es apto/no es apto) para hacerlo (✅/❌)</h2>
+                <h2 th:if="${votante.ha_votado != 0}">El DUI <span th:text="${votante.dui}"></span>  (no) ha votado y (es apto) para hacerlo (✅)</h2>
+                <h2 th:if="${votante.ha_votado == 0}">El DUI <span th:text="${votante.dui}"></span>  (ya) ha votado y (no es apto) para hacerlo (❌)</h2>
             </div>
             <div class="duiInfo">
                 <div class="leftColumn">
@@ -32,13 +33,16 @@
                     <p>Centro de votación:</p>
                 </div>
                 <div class="rightColumn">
-                    <p>(Llamar apellidos DUI)</p>
-                    <p>(Llamar nombres DUI):</p>
-                    <p>(Llamar sexo DUI)</p>
-                    <p>(Llamar Departamento DUI)</p>
-                    <p>(Llamar Municipio DUI)</p>
-                    <p>(Llamar Distrito DUI)</p>
-                    <p>(Llamar centro de votación DUI)</p>
+                    <p><span th:text="${votante.apellidos_votante}"></span></p>
+                    <p><span th:text="${votante.nombres_votante}"></span></p>
+                    <p><span th:text="${votante.sexo_votante}"></span></p>
+
+                    <p><span th:text="${votante.getId_centro_votacion().getDepartamento()}"></span></p>
+                    <p><span th:text="${votante.getId_centro_votacion().getMunicipio()}"></span></p>
+                    <p><span th:text="${votante.getId_centro_votacion().getDistrito()}"></span></p>
+                    <p><span th:text="${votante.getId_centro_votacion().getNombre_centro_votacion()}"></span></p>
+
+
                 </div>
             </div>
             <a th:href="@{/urna}">

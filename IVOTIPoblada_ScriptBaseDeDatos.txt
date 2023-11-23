@@ -254,36 +254,23 @@ VALUES
 
 #POBLAR TABLA DE PARTIDOS POLITICOS
 INSERT INTO Partidos (nombre_partido, abreviacion_partido) VALUES
-('Partido Frente Farabundo Marti para la Liberación Nacional', 'FMLN'),
-('Partido Alianza Republicana Nacionalista', 'ARENA'),
-('Partido Gran Alianza por la Unidad Nacional', 'GANA'),
-('Partido de Concertación Nacional', 'PCN'),
-('Partido Cambio Democrático', 'CD'),
-('Partido Nuestro Tiempo', 'NT'),
-('Partido Vamos', 'VAMOS'),
-('Partido Social Demócrata Cristiano', 'PDC'),
 ('Partido Nuevas Ideas', 'NI'),
-('Partido Democracia Salvadoreña', 'DS'),
-('Fuerza Solidaria', 'FS'), 
-('Partido Independiente Salvadoreño', 'PAIS'),
+('Partido Alianza Republicana Nacionalista', 'ARENA'),
+('Partido Nuestro Tiempo', 'NT'),
+('Partido Frente Farabundo Marti para la Liberación Nacional', 'FMLN'),
+('Fuerza Solidaria', 'FS'),
 ('Fraternidad Patriota Salvadoreña', 'FPS');
 
 #POBLAR LA TABLA DE CANDIDATOS
 INSERT INTO Candidatos (nombres_candidato, apellidos_candidato, id_partido)
 VALUES 
-('Nayib Armando', 'Bukele Ortez', 9),
+('Nayib Armando', 'Bukele Ortez', 1),
 ('Joél Humberto', 'Sanchez Maldonado', 2),
-('Luis Alberto', 'Parada Fuentes', 6),
-('Juan Manuel', 'Flores de Jesús Cornejo', 1),
-('José Javier', 'Renderos Vásquez', 11),
-('José Rodolfo', 'Cardoza', 12),
-('Marina', 'Maurillo', 13),
-('Elías Antonio', 'Saca González', 3),
-('José Serafin', 'Orantes Rodriguez', 4),
-('Reinaldo Alcides', 'Carballo Carballo', 8),
-('Claudia Mercedes', 'Ortiz Menjivar', 7),
-('Douglas', 'Mejía Aviles', 10),
-('Adolfo', 'Salume Artiñano', 5);
+('Luis Alberto', 'Parada Fuentes', 3),
+('Juan Manuel', 'Flores Corenejo', 4),
+('José Javier', 'Renderos Vásquez', 5),
+('Marina', 'Maurillo', 6);
+
 
 #POBLAR CON UN DATO LOS VOTOS PARA VER QUE FUNCIONE.
 INSERT INTO Votos (dui, id_candidato, hora_voto, id_centro_votacion)
@@ -295,14 +282,7 @@ UPDATE Candidatos SET foto_candidato = 'joelSanchez.jpg' WHERE id_candidato = 2;
 UPDATE Candidatos SET foto_candidato = 'luiParada.jpg' WHERE id_candidato = 3;
 UPDATE Candidatos SET foto_candidato = 'manuelFlores.jpg' WHERE id_candidato = 4;
 UPDATE Candidatos SET foto_candidato = 'joseRenderos.jpeg' WHERE id_candidato = 5;
-UPDATE Candidatos SET foto_candidato = 'joseCardoza.png' WHERE id_candidato = 6;
-UPDATE Candidatos SET foto_candidato = 'marinaMaurillo.jpg' WHERE id_candidato = 7;
-UPDATE Candidatos SET foto_candidato = 'tonySaca.jpg' WHERE id_candidato = 8;
-UPDATE Candidatos SET foto_candidato = 'joseSerafin.jpg' WHERE id_candidato = 9;
-UPDATE Candidatos SET foto_candidato = 'reynaldoCarballo.jpg' WHERE id_candidato = 10;
-UPDATE Candidatos SET foto_candidato = 'claudiaOrtiz.jpg' WHERE id_candidato = 11;
-UPDATE Candidatos SET foto_candidato = 'douglasMejia.jpg' WHERE id_candidato = 12;
-UPDATE Candidatos SET foto_candidato = 'fitoSalume.jpg' WHERE id_candidato = 13;
+UPDATE Candidatos SET foto_candidato = 'marinaMaurillo.jpg' WHERE id_candidato = 6;
 
 #SELECCIONAR TABLAS
 SELECT * FROM CentroVotacion;
@@ -310,3 +290,4 @@ SELECT * FROM Votante;
 SELECT * FROM Partidos;
 SELECT * FROM Candidatos;
 SELECT * FROM Votos;
+

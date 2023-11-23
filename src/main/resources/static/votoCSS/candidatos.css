@@ -74,3 +74,102 @@ p{
     background-color: rgb(13, 118, 13);
     cursor: pointer;
 }
+
+/*-------------------------------------------------*/
+
+/* Estilo de la ventana modal */
+.modal {
+    display: none; /* Oculta la modal por defecto */
+    position: fixed; /* Se queda fija en la pantalla */
+    z-index: 1; /* Se sitúa sobre el resto del contenido */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilita el scroll si es necesario */
+    background-color: rgba(0,0,0,0.6); /* Color de fondo con opacidad */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo del contenido de la modal */
+.modal-content {
+    background-color: #f6f6f6;
+    margin: 8% auto; /* 8% desde arriba y centrado horizontalmente */
+    padding: 30px;
+    border: 2px solid #888;
+    width: 30%; /* Ancho del contenido */
+    border-radius: 45px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Sombra para dar efecto elevado */
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* El botón para cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilos para la imagen del candidato en la modal */
+#modalFotoCandidato {
+    display: block;
+    height: 275px;
+    width: 250px;
+    margin: 0 auto; /* Centra la imagen */
+    border-radius: 5%; /* Hace la imagen circular */
+    border: 3px solid #272727; /* Borde para la imagen */
+
+}
+
+/* Estilos para los textos dentro de la modal */
+.modal-content h2, .modal-content p {
+    text-align: center; /* Centra el texto */
+    margin-top: 16px;
+}
+
+.modal-content > h2{
+    font-weight: 700;
+}
+
+/* Estilos para los botones dentro de la modal */
+#cancelarVoto, #confirmarVoto {
+    font-size: 23px;
+    padding: 10px 20px;
+    margin: 18px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cancelarVoto {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+#cancelarVoto:hover {
+    background-color: #d32f2f;
+}
+
+#confirmarVoto {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+#confirmarVoto:hover {
+    background-color: #388E3C;
+}

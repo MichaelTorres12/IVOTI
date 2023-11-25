@@ -76,7 +76,9 @@ p{
 }
 
 /*-------------------------------------------------*/
-
+displayBlock {
+    display: block;
+}
 /* Estilo de la ventana modal */
 .modal {
     display: none; /* Oculta la modal por defecto */
@@ -90,6 +92,8 @@ p{
     background-color: rgba(0,0,0,0.6); /* Color de fondo con opacidad */
     font-family: 'Roboto', sans-serif;
 }
+
+
 
 /* Estilo del contenido de la modal */
 .modal-content {
@@ -116,6 +120,7 @@ p{
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 11111111;
 }
 
 .close:hover,
@@ -168,6 +173,11 @@ p{
 #confirmarVoto {
     background-color: #4CAF50; /* Verde */
     color: white;
+}
+
+
+displayNone {
+    display: none;
 }
 
 #confirmarVoto:hover {

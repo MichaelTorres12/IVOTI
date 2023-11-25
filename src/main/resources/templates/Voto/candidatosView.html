@@ -19,7 +19,7 @@
             <h2>Vota por uno de los siguientes candidatos presidenciales:</h2>
         </div>
         <div class="candidatos">
-            <div th:each="candidato : ${candidatos}" class="infoCandidatoCuadro" onclick="abrirModal(this)">
+            <div th:each="candidato : ${candidatos}" class="infoCandidatoCuadro" th:id_candidato="${candidato.getId_candidato()}"  onclick="abrirModal(this.getAttribute('id_candidato'))">
                 <div class="infoCandidatoFoto">
                     <img th:src="@{/img/{foto}(foto=${candidato.fotoCandidato})}" alt="Foto del candidato" width="200" height="200">
                 </div>
@@ -28,6 +28,26 @@
                         <p th:text="${candidato.getNombresCandidato()}"></p>
                         <p th:text="${candidato.getApellidosCandidato()}"></p>
                         <p th:text="${candidato.getIdPartido().getNombre_partido()}"></p>
+                    </div>
+                </div>
+
+                <div id="modal1" class="modal" th:id="'modalCandidato_' + ${candidato.getId_candidato()}">
+                    <div class="modal-content">
+                        <span class="close" id="closeModal" onclick="cerrarModal('${candidato.getId_candidato()}')">&times;</span>
+
+                        <img id="modalFotoCandidato" th:src="@{/img/{foto}(foto=${candidato.fotoCandidato})}" alt="Foto del Candidato" width="200" height="200">
+                        <h2 id="modalNombreCandidato" th:text="${candidato.getNombresCandidato()}"></h2>
+                        <p id="modalPartidoCandidato" th:text="${candidato.getIdPartido().getNombre_partido()}"></p>
+                        <p>¿Deseas votar a este candidato?</p>
+
+                        <form th:action="@{/votoFinalizado}" method="post">
+                        <input type="number" name="dui" id="dui" th:value="${dui1}">
+                        <input type="number" name="candidato" id="candidato" th:value="${candidato.getId_candidato()}">
+                        <div class="botones">
+                            <button id="cancelarVoto">Cancelar</button>
+                            <button type="submit" id="confirmarVoto">Votar</button>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -39,7 +59,7 @@
 </section>
 
 <!-- Ventana Modal -->
-<div id="modalCandidato" class="modal">
+<!--<div id="modalCandidato" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <img id="modalFotoCandidato" src="" alt="Foto del Candidato" width="200" height="200">
@@ -53,41 +73,52 @@
         </div>
 
     </div>
-</div>
+</div>-->
 
 <div th:include="Reutilizable/footer.html :: footer"></div>
 
 <!-- Script de JavaScript para la interactividad de la ventana modal -->
 <script>
-    var modal = document.getElementById("modalCandidato");
-    var span = document.getElementsByClassName("close")[0];
+    //let modal1 = document.getElementsByClassName("#modal");
+    //let span = document.getElementById("closeModal");
 
-    function abrirModal(elementoCandidato) {
-        var foto = elementoCandidato.querySelector('.infoCandidatoFoto img').src;
+    function abrirModal(id) {
+        /* foto = elementoCandidato.querySelector('.infoCandidatoFoto img').src;
         var nombre = elementoCandidato.querySelector('.infoCandidatoTexto div').children[0].textContent;
         var apellido = elementoCandidato.querySelector('.infoCandidatoTexto div').children[1].textContent;
         var partido = elementoCandidato.querySelector('.infoCandidatoTexto div').children[2].textContent;
 
         document.getElementById("modalFotoCandidato").src = foto;
         document.getElementById("modalNombreCandidato").textContent = nombre + " " + apellido;
-        document.getElementById("modalPartidoCandidato").textContent = partido;
+        document.getElementById("modalPartidoCandidato").textContent = partido;*/
 
-        modal.style.display = "block";
+        cerrarTodosLosModales();
+
+        let modal = document.getElementById("modalCandidato_" + id);
+
+        console.log(modal);
+        if(modal) {
+            modal.style.display = "block";
+        }
+
     }
 
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
+    function cerrarModal(idCandidato) {
+        let modal = document.getElementById("modalCandidato_" + idCandidato);
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if(modal) {
+            modal.style.display = 'none';
         }
     }
 
-    document.getElementById("cancelarVoto").onclick = function() {
-        modal.style.display = "none";
+    function cerrarTodosLosModales() {
+        let modales = document.querySelectorAll('.modal');
+        modales.forEach(function (modal) {
+            modal.style.display = 'none';
+        });
     }
+
+
 
     // Añadir lógica para el botón de confirmar voto si es necesario
 </script>

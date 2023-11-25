@@ -16,16 +16,16 @@
         <div class="bienvenidaTexto">
             <h1>¡Bienvenido al sistema de elecciones presidenciales <br> de la Republica de El Salvador! </h1>
         </div>
-        <div class="duiIngreso">
-            <h2>Ingresa tu DUI en el siguiente campo para poder votar:</h2>
-            <input type="text" name="pedirDui" placeholder="Ejemplo: 12345678-9">
-        </div>
-        <div class="btnVerificar">
-            <!-- En el href mandarle el dui del input  -->
-            <a th:href="@{/candidatos}">
-                <button type="button">Verificar</button>
-            </a>
-        </div>
+        <form th:action="@{/candidatos}" method="post">
+            <div class="duiIngreso">
+                <h2>Ingresa tu DUI en el siguiente campo para poder votar:</h2>
+                <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9">
+            </div>
+            <div class="btnVerificar">
+                <!-- En el href mandarle el dui del input  -->
+                <button type="submit">Verificar</button>
+            </div>
+        </form>
     </div>
 </section>
 

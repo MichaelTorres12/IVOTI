@@ -19,8 +19,8 @@
         </div>
         <div class="votanteInfo">
             <div class="votanteEstado">
-                <h2 th:if="${votante.ha_votado != 0}">El DUI <span th:text="${votante.dui}"></span>  (no) ha votado y (es apto) para hacerlo (✅)</h2>
-                <h2 th:if="${votante.ha_votado == 0}">El DUI <span th:text="${votante.dui}"></span>  (ya) ha votado y (no es apto) para hacerlo (❌)</h2>
+                <h2 th:if="${votante.ha_votado != 0}">El DUI <span th:text="${votante.dui}"></span>  (NO) ha votado y (ES APTO) para hacerlo (✅)</h2>
+                <h2 th:if="${votante.ha_votado == 0}">El DUI <span th:text="${votante.dui}"></span>  (YA) ha votado y (NO ES APTO) para hacerlo (❌)</h2>
             </div>
             <div class="duiInfo">
                 <div class="leftColumn">

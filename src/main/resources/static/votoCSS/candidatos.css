@@ -42,8 +42,8 @@ p{
 
 .generalWrapper > .contentWrapper > .candidatos > .infoCandidatoCuadro{
     background-color: #eeeeee;
-    width: 220px;
-    height: 380px;
+    width: 250px;
+    height: 400px;
     border: 4px solid black;
     border-radius: 30px;
     padding: 1em;
@@ -61,18 +61,8 @@ p{
     border: 3px solid black;
 }
 
-.generalWrapper > .botonFelicidades > button{
-    background-color: rgb(18, 144, 18);
-    color: white;
-    width: 250px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 15px;
-}
-.generalWrapper > .botonFelicidades > button:hover{
-    background-color: rgb(13, 118, 13);
-    cursor: pointer;
+.generalWrapper > .contentWrapper > .candidatos > .infoCandidatoCuadro > .infoCandidatoTexto > div > #nombreCandidato{
+    font-weight: bolder;
 }
 
 /*-------------------------------------------------*/

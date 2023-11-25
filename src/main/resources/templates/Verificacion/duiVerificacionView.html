@@ -18,14 +18,14 @@
         <form th:action="@{/verificarDUI}" method="post">
             <div class="duiIngreso">
                 <h2>Ingrese el DUI del votante para verificar su información y estatus del votante</h2>
-                <input type="text" name="dui" placeholder="Ejemplo: 12345678-9">
+                <input id="inputDui" type="text" name="dui" placeholder="Ejemplo: 12345678-9">
             </div>
             <div class="btnVerificar">
-                <button type="submit">Verificar</button>
                 </a>
                 <a th:href="@{/}">
                     <button type="button">MENÚ</button>
                 </a>
+                <button id="verficarButton" type="submit">Verificar</button>
             </div>
     </section>
 </div>

@@ -10,7 +10,9 @@ Hecho por:
 -Carlos Emiliano Torres Callejas, TC100220.
 -Fernando José Trejo Guevara, TG100221.
 -Rodrigo Antonio Guzman Angulo GA100620.
--Karla Valentina Pocasangre.
--Josseline.
+-Karla Valentina Pocasangre Bonilla, PB100221.
+-Joselin Carolina Sanchez Alvarez, SA100821.
+
+Estudiantes de Ingenieria en Desarrollo de Software de la Universidad Francisco Gavidia x Arizona State University.
 
 -----------------------------------------------

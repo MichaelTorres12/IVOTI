@@ -21,12 +21,12 @@
         <div class="candidatos">
             <div th:each="candidato : ${candidatos}" class="infoCandidatoCuadro" th:id_candidato="${candidato.getId_candidato()}"  onclick="abrirModal(this.getAttribute('id_candidato'))">
                 <div class="infoCandidatoFoto">
-                    <img th:src="@{/img/{foto}(foto=${candidato.fotoCandidato})}" alt="Foto del candidato" width="200" height="200">
+                    <img th:src="@{/img/{foto}(foto=${candidato.fotoCandidato})}" alt="Foto del candidato" width="210" height="200">
                 </div>
                 <div class="infoCandidatoTexto">
                     <div>
-                        <p th:text="${candidato.getNombresCandidato()}"></p>
-                        <p th:text="${candidato.getApellidosCandidato()}"></p>
+                        <p id="nombreCandidato" th:text="${candidato.getNombresCandidato()}"></p>
+                        <p id="nombreCandidato" th:text="${candidato.getApellidosCandidato()}"></p>
                         <p th:text="${candidato.getIdPartido().getNombre_partido()}"></p>
                     </div>
                 </div>
@@ -53,9 +53,7 @@
             </div>
         </div>
     </div>
-    <a th:href="@{/votoFinalizado}" class="botonFelicidades">
-        <button>FELICIDADES BTN</button>
-    </a>
+
 </section>
 
 <!-- Ventana Modal -->

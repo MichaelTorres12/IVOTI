@@ -29,10 +29,10 @@ h2{
     font-weight: 400;
     letter-spacing: 1px;
 }
-.all > .generalWrapper > .duiIngreso{
+.all > .generalWrapper > form > .duiIngreso{
     margin-top: 2.7em;
 }
-.all > .generalWrapper > .duiIngreso > input{
+.all > .generalWrapper > form > .duiIngreso > input{
     width: 500px;
     height: 45px;
     border: none;
@@ -46,7 +46,8 @@ h2{
     margin-top: 1em;
     margin-bottom: 1.5em;
 }
-.all > .generalWrapper > .btnVerificar > a > button{
+
+.all > .generalWrapper > form > .btnVerificar > a > button{ /*Este hace referencia al del Menú*/
     width: 150px;
     height: 40px;
     border: 4px solid #114663;
@@ -54,9 +55,26 @@ h2{
     background-color: #1C9AE0;
     font-size: 20px;
     color: #fff;
+    margin-right: 9px;
 }
-.all > .generalWrapper > .btnVerificar > a > button:hover{
+.all > .generalWrapper > form > .btnVerificar > a > button:hover{ /*Este hace referencia al del Menú*/
     cursor: pointer;
     background-color: #1372a7;
+    box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.all > .generalWrapper > form > .btnVerificar > button{ /*Este hace referencia al de verificar*/
+    width: 150px;
+    height: 40px;
+    border: 4px solid #578d00;
+    border-radius: 10px;
+    background-color: #7dc30b;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 9px;
+}
+.all > .generalWrapper > form > .btnVerificar > button:hover{ /*Este hace referencia al de verificar*/
+    cursor: pointer;
+    background-color: #4a7605;
     box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
 }

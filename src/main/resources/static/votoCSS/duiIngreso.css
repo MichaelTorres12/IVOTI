@@ -23,10 +23,10 @@ h2{
 .generalWrapper > .contentWrapper{
     width: 1200px;
 }
-.generalWrapper > .contentWrapper > .duiIngreso{
+.generalWrapper > .contentWrapper > form .duiIngreso{
     margin-top: 5em;
 }
-.generalWrapper > .contentWrapper > .duiIngreso > input{
+.generalWrapper > .contentWrapper > form .duiIngreso > input{
     width: 500px;
     height: 45px;
     border: none;
@@ -40,7 +40,7 @@ h2{
     margin-top: 1em;
     margin-bottom: 1.5em;
 }
-.generalWrapper > .contentWrapper > .btnVerificar > a > button{
+.generalWrapper > .contentWrapper > form > .btnVerificar > button{
     width: 150px;
     height: 40px;
     border: 4px solid #114663;
@@ -49,7 +49,7 @@ h2{
     font-size: 20px;
     color: #fff;
 }
-.generalWrapper > .contentWrapper > .btnVerificar > a > button:hover{
+.generalWrapper > .contentWrapper > form > .btnVerificar > button:hover{
     cursor: pointer;
     box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
 }

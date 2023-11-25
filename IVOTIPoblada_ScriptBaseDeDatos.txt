@@ -1,8 +1,10 @@
+#Primero hagan un DROP DATABASE ivotidb (Esto si ya la tienen creada para que ejecuten aca la ultima DB).
+
 CREATE DATABASE ivotidb;
 
 use ivotidb;
 
-CREATE TABLE CentroVotacion (
+CREATE TABLE centro_votacion (
     id_centro_votacion INT(6) PRIMARY KEY NOT NULL auto_increment,
     nombre_centro_votacion VARCHAR(255) NOT NULL,
     departamento VARCHAR(255) NOT NULL,
@@ -20,7 +22,7 @@ CREATE TABLE Votante (
     fecha_expedicion_dui_votante DATE NOT NULL,
     id_centro_votacion INT NOT NULL,
 	ha_votado BIT DEFAULT 0 NOT NULL,
-    FOREIGN KEY (id_centro_votacion) REFERENCES CentroVotacion(id_centro_votacion)
+    FOREIGN KEY (id_centro_votacion) REFERENCES centro_votacion(id_centro_votacion)
 );
 
 #Crear la tabla de PARTIDOS POLITICOS
@@ -50,13 +52,14 @@ CREATE TABLE Votos (
     id_centro_votacion INT(6),
     FOREIGN KEY (dui) REFERENCES Votante(dui),
     FOREIGN KEY (id_candidato) REFERENCES Candidatos(id_candidato),
-    FOREIGN KEY (id_centro_votacion) REFERENCES CentroVotacion(id_centro_votacion)
+    FOREIGN KEY (id_centro_votacion) REFERENCES centro_votacion(id_centro_votacion)
 );
+
 
 
 #POBLAR TABLAS
 #POBLAR TABLA DE CENTROS DE VOTACIONES
-INSERT INTO CentroVotacion (nombre_centro_votacion, departamento, municipio, distrito)
+INSERT INTO centro_votacion (nombre_centro_votacion, departamento, municipio, distrito)
 VALUES
 ('Escuela Atiquizaya 1', 'AHUACHAPÁN', 'Ahuachapán Norte', 'Atiquizaya'),
 ('Plaza Atiquizaya 2', 'AHUACHAPÁN', 'Ahuachapán Norte', 'Atiquizaya'),
@@ -285,9 +288,8 @@ UPDATE Candidatos SET foto_candidato = 'joseRenderos.jpeg' WHERE id_candidato = 
 UPDATE Candidatos SET foto_candidato = 'marinaMaurillo.jpg' WHERE id_candidato = 6;
 
 #SELECCIONAR TABLAS
-SELECT * FROM CentroVotacion;
+SELECT * FROM centro_votacion;
 SELECT * FROM Votante;
 SELECT * FROM Partidos;
 SELECT * FROM Candidatos;
 SELECT * FROM Votos;
-

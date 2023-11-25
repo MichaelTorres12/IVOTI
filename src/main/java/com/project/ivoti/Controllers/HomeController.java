@@ -1,5 +1,6 @@
 package com.project.ivoti.Controllers;
 import com.project.ivoti.Models.Candidato;
+import com.project.ivoti.Models.CentroVotacion;
 import com.project.ivoti.Models.Partido;
 import com.project.ivoti.Models.Votante;
 import com.project.ivoti.interfaceService.IcandidatoService;
@@ -10,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -56,15 +55,37 @@ public class HomeController {
 
 
     //Agregar para que acepte el Dui como parametro
-    @GetMapping("/candidatos") //Ruta donde se muestran los candidatos.
-    public String candidatos(Model model) {
+    @PostMapping("/candidatos") //Ruta donde se muestran los candidatos.
+    public String candidatos(@ModelAttribute Votante votante01, Model model) {
+        int dui = votante01.getDui();
+        System.out.println(dui);
         List<Candidato> canditatos = candidato.listar();
         model.addAttribute("candidatos", canditatos);
+        model.addAttribute("dui1", dui);
         return "Voto/candidatosView";
     }
 
-    @GetMapping("/votoFinalizado") //Ruta donde se indica que terminó el proceso.
-    public String votosFinalizado() { return "Voto/finalizadoView";}
+    @PostMapping("/votoFinalizado") //Ruta donde se indica que terminó el proceso.
+    public String votosFinalizado(@ModelAttribute Votante votante01, @ModelAttribute Candidato candidato01) {
+        int dui1 = votante01.getDui();
+        Votante dui = votante01;
+        int candidato1 = candidato01.getId_candidato();
+        Optional<Votante> votan = votante.buscarById(dui1);
+        Votante vot = votan.get();
+
+
+
+        CentroVotacion id_centro_votacion = vot.getId_centro_votacion();
+
+        voto.save(candidato01, dui, id_centro_votacion);
+
+        System.out.println("DUI: " + dui);
+        System.out.println("Candidato: " + candidato1);
+        System.out.println("Votante: " + votan);
+        System.out.println("Centro Votacion: " + id_centro_votacion);
+
+        return "Voto/finalizadoView";
+    }
 
 
     //Rutas del sistema de estadísticas
